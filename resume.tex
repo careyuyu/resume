@@ -1,63 +1,78 @@
 % !TEX program = xelatex
 
-\documentclass{resume}
-%\usepackage{zh_CN-Adobefonts_external} % Simplified Chinese Support using external fonts (./fonts/zh_CN-Adobe/)
-%\usepackage{zh_CN-Adobefonts_internal} % Simplified Chinese Support using system fonts
+\documentclass[10pt]{resume}
+% \usepackage[top=1in, bottom=1in, left=0.75in, right=0.75in]{geometry}
 
 \begin{document}
 \pagenumbering{gobble} % suppress displaying page number
 
-\name{Frank Lou}
+\name{Hongwei(Frank) Lou}
 
 \basicInfo{
-  \email{careyuyu@outlook.com} \textperiodcentered\ 
-  \phone{619-943-6334} \textperiodcentered\ 
-  \linkedin[hongwei-lou]{https://www.linkedin.com/in/hongwei-lou/}}
+  \email{careyuyu@outlook.com} |
+  \phone{619-943-6334} |
+  \linkedin[linkedin.com/in/hongwei-lou/]{https://www.linkedin.com/in/hongwei-lou/}
+}
 
-\section{\faGraduationCap\ Education}
-\datedsubsection{\textbf{University of Southern California (USC Viterbi)}, Los Angeles, CA}{Aug. 2020 -- Dec. 2022}
-\textit{M.S.} in Computer Science, \textbf{GPA:} 3.7/4.0
-\datedsubsection{\textbf{Virginia Tech}, Blacksburg, VA}{Aug. 2015 -- Dec. 2019}
-\textit{B.S.} in Computer Science, \textbf{GPA:} 3.76/4.0
+\section{Education}
+\datedsubsection{\textbf{University of Southern California}}{Los Angeles, CA}
+\rolesecond{\textit{M.S.} in Computer Science \textbf{GPA:} 3.7/4.0}{Aug. 2020 -- Dec. 2022}
+\datedsubsection{\textbf{Virginia Tech}}{Blacksburg, VA}
+\rolesecond{\textit{B.S.} in Computer Science \textbf{GPA:} 3.76/4.0}{Aug. 2015 -- Dec. 2019}
 
-\section{\faUsers\ Experience}
-\datedsubsection{\textbf{PONS Incorporated}, NJ, U.S.A (remote)}{Jan. 2023 -- Present}
-\role{Software Engineer}{}
-Brief introduction: Led and managed the development of the \textbf{AWS-CDK} based back-end services in \textbf{serverless model} and front-end applications in \textbf{Flutter} for an AI-driven remote medical ultrasound imaging solution.
+\section{Work Experience}
+\datedsubsection{\textbf{PONS Incorporated} | AWS, Flutter, Docker, Typescript, Dart, Java, Python }{Remote, U.S.A}
+\role{Software Engineer}{Jan. 2023 -- Present}
+Brief introduction: Led a team of four in the design and development of an AI-powered remote medical ultrasound
+imaging software, successfully transitioning from concept to MVP and deployment in a clinical setting, instrumental for seed funding.
 \begin{itemize}
-\item Contributed to converting the core image enhancement algorithm from \textbf{Matlab} to \textbf{Python} for seamless deployment in \textbf{AWS serverless model}. Created a stable \textbf{Docker} image of the modified algorithm and efficiently managed and deployed it using \textbf{AWS ECS} and \textbf{AWS Fargate}. Achieved a reduction in average execution time from 8.7 seconds to 3.7 seconds by optimizing Fargate service settings.
-\item Managed the integration of the system with major \textbf{EMR (Electronic Medical Record)} platforms in the U.S. by thoroughly studying their API documentations and implementing essential \textbf{AWS microservices}. Implemented handlers for \textbf{OAuth} login to EMRs, \textbf{APIs} for seamless data retrieval from EMRs, and a reliable \textbf{EMR JWT token validator service}, significantly enhancing system functionality and security.
-\item Implemented a streamlined service utilizing \textbf{DynamoDB streams} and \textbf{AWS SES} for generating and dispatching scan appointment QR codes to patients via e-mail. Simplified the use of the service.
-\item Collaborated with the ML team to successfully migrate the training and deployment of model endpoints to \textbf{AWS SageMaker}, ensuring efficient integration with AWS services.
+
+\item \textbf{Engineered RESTful APIs} using AWS Lambda, integrated with DynamoDB and S3 for efficient scan record and appointment management, supporting over 10,000 daily invocations.
+
+\item \textbf{Contributed to develop} a sophisticated ultrasound image enhancement algorithm in Java and containerized the solution using Docker, and deployed it as a stable open API via AWS ECS and AWS Fargate, resulting in a 500\% increase in software usage.
+
+\item \textbf{Collaborated} on a data pipeline design and implementation with the AI team, leveraging SageMaker, S3, and AWS Lambda for automated data processing of over 100,000 ultrasound images daily, significantly reducing manual
+labor by 95\%.
+
+\item \textbf{Developed and maintained} web and tablet applications with Flutter, integrating APIs and managing accounts with AWS Amplify and Cognito, resulting in daily use across three hospitals.
+
+\item \textbf{Established a solid testing framework}, achieving 80\% code coverage through automated unit tests to ensure software reliability.
+
+\item \textbf{Automated infrastructure stack construction}  using AWS CloudFormation, TypeScript, and AWS CDK.
+
+\end{itemize}
+\datedsubsection{\textbf{PONS Incorporated} | AWS, Flutter, Typescript, Dart, Java}{Remote, U.S.A}
+\role{Software Engineer Intern}{Jul. 2022 -- Dec. 2022}
+\begin{itemize}
+\item \textbf{Developed AWS Lambda functions} to streamline ultrasound data workflow, enabling automated indexing, analysis, and secure data transfer, enhancing system scalability and efficiency.
+\item \textbf{In collaboration with the AI team}, developed real-time scan guidance by integrating the Flutter app with the Probe SDK and AI models, achieving a 99\% accuracy rate in hospital tests.
+\item \textbf{Created a standardized Flutter widget library}, enhancing project efficiency.
+\item \textbf{Integrated the system with EHR platforms} using OAuth2 authentication and managed user identity with Amazon Cognito, ensuring secure and compliant healthcare data management.
+\item \textbf{Configured and maintained CI/CD pipelines} for Flutter and AWS applications using CDK Pipelines and AWS CodeCommit.
 \end{itemize}
 
-\datedsubsection{\textbf{PONS Incorporated}, NJ, U.S.A (remote)}{Jul. 2022 -- Dec. 2022}
-\role{Software Engineer Intern}{}
+
+
+\section{Projects}
+\datedsubsection{\textbf{A Distributed K-V Database based on Multi-Raft} | Go, Raft}{}
 \begin{itemize}
-\item Developed and deployed \textbf{AWS CDK}-based microservices on \textbf{AWS} for scan events handling (core service) encompassing smooth scan file upload and download to \textbf{S3}, efficient \textbf{DynamoDB} indexing, and reliable \textbf{AWS Lambda} functions for API handlers and inter-service communication.
-\item Developed the company's core tablet and web app using \textbf{Flutter} based on Figma design, incorporating a \textbf{robust and shareable widget library}. Integrated backend APIs to facilitate efficient uploading and viewing of scan files. Received positive feedback from investors and testers.
-\item Collaborated with ML team and ultrasound device provider, integrated the ultrasound scanning device SDK and \textbf{PyTorch models} into the \textbf{Flutter app}, enabling real-time scan instructions to patients using video frames from the ultrasound device and the ML model (key product feature).
+\item \textbf{Implemented the Raft consensus protocol} with features such as leader election, log replication, and compaction, along with optimizations for improved performance.
+\item \textbf{Enabled dynamic configuration changes and region splitting}, with a scheduler for load balancing and read index for enhanced throughput.
+\item \textbf{Developed Multi-Version Concurrency Control (MVCC)} based on the Percolator protocol.
 \end{itemize}
 
-\datedsubsection{\textbf{3D Optical Information Lab}, Virginia Tech, U.S.A}{Sept. 2018 -- May. 2019}
-\role{Undergraduate Research Assistant}{}
+\datedsubsection{\textbf{A Secure Data Transmission and Storage System} | Go}{}
 \begin{itemize}
-\item Contributed to the development of a pipeline of computer vision algorithms to extract crack patterns from a large volumetric data of in-situ X-ray tomography measurements using \textbf{Python and TensorFlow}.
+\item \textbf{Integrated TLS} for secure data transmission between clients and servers.
+\item \textbf{Implemented AES encryption} for data at rest in file system.
+\item \textbf{Managed a chain of trust} with X.509 certificates for server and client authentication.
 \end{itemize}
 
-
-% Reference Test
-%\datedsubsection{\textbf{Paper Title\cite{zaharia2012resilient}}}{May. 2015}
-%An xxx optimized for xxx\cite{verma2015large}
-%\begin{itemize}
-%  \item main contribution
-%\end{itemize}
-
-\section{\faCogs\ Technical Skills} 
+\section{Technical Skills} 
 \begin{itemize}[parsep=0.5ex]
-  \item Programming Languages: Java, JavaScript, TypeScript, Python, Dart, C, GO, SQL, HTML/CSS
-  \item Frameworks \& Technologies: Node.js, Spring Boot, React.js, Flutter, Redis, MySQL, MongoDB, Git
-  \item Cloud Development: AWS (Lambda, S3, DynamoDB, ECS, Fargate, CloudWatch, CDK), GCP, Docker
+  \item \textbf{Programming Languages:} Java, JavaScript, TypeScript, Python, Dart, C, Go, SQL, HTML/CSS
+  \item \textbf{Frameworks \& Technologies:} Node.js, Spring Boot, React.js, Flutter, Kubernetes, MySQL, Nginx, Git
+  \item \textbf{Cloud Development:} AWS (Lambda, S3, DynamoDB, ECS, Fargate, CloudWatch, CDK), GCP, Docker
 \end{itemize}
  
 
